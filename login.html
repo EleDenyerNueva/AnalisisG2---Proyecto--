@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>Ingreso | Control de Accesos</title>
+  <link rel="stylesheet" href="./login.css"/>
+</head>
+<body>
+  <main class="container">
+    <section class="card" aria-labelledby="login-title">
+      <h1 id="login-title">Iniciar sesión</h1>
+      <p class="muted">Demo de inicio de sesión (mock). No hay base de datos todavía.</p>
+
+      <form id="login-form" novalidate>
+        <div class="field">
+          <label for="usuario">Usuario</label>
+          <input id="usuario" name="usuario" type="text" placeholder="p. ej. admin" autocomplete="username" required minlength="3"/>
+          <small class="error" id="usuario-error"></small>
+        </div>
+
+        <div class="field">
+          <label for="clave">Contraseña</label>
+          <div class="password-wrap">
+            <input id="clave" name="clave" type="password" placeholder="••••••" autocomplete="current-password" required minlength="4"/>
+            <button type="button" id="togglePass" class="ghost" aria-pressed="false" aria-label="Mostrar/Ocultar contraseña">👁</button>
+          </div>
+          <small class="error" id="clave-error"></small>
+        </div>
+
+        <button id="submitBtn" class="primary" type="submit">Entrar</button>
+        <div class="meta">
+          <label class="checkbox">
+            <input type="checkbox" id="remember" /> Mantener sesión (demo)
+          </label>
+        </div>
+
+        <div class="feedback" aria-live="polite" id="form-feedback"></div>
+      </form>
+
+      <details class="help">
+        <summary>Credenciales de prueba</summary>
+        <ul>
+          <li><code>admin</code> / <code>1234</code></li>
+          <li><code>seguridad</code> / <code>secure123</code></li>
+        </ul>
+      </details>
+    </section>
+
+    <footer class="foot">
+      <small>© Demo académica · Control de Accesos</small>
+    </footer>
+  </main>
+
+  <script src="./login.js" type="module"></script>
+</body>
+</html>
